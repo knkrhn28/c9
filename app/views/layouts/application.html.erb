@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <br/>
+  <%= link_to 'Yeni Film', new_movie_path,class:'btn btn-warning' %>
+  <%= link_to 'Tüm Film', movies_path,class:'btn btn-warning' %><br/>
+  <%= yield %>
+  
+  
+</div>
+
+
 
 </body>
 </html>

@@ -1,0 +1,28 @@
+<div class="container">
+	<br/>
+	<br/>
+	<br/>
+	<table class="table table-bordered" >
+        <thead>
+            <tr>
+              <th><%= "baslik" %></th>
+              <th><%= "aciklama" %></th>
+              <th><%= "tarih" %></th>
+              <th><%= "resim" %></th>
+            </tr>
+        </thead>
+			<tbody>
+				
+				  <tr>
+				  	
+					<td><%= @movie.name%></td>
+					<td><%= @movie.description%></td>
+					<td><%= @movie.published_date%></td>
+					<td><%= image_tag @movie.avatar.url(:medium) %></td>
+				  </tr>
+				
+			</tbody>
+    </table>
+    
+
+</div>

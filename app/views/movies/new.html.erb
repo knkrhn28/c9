@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <% if @movie.errors.any? %>
+            Hata: <%= @movie.errors.full_messages.to_sentence %>
+            <br/><br/><br/>
+        <% end %>
+            
+        
+        <%= form_for @movie, url:{action: 'create'} do |f| %>
+            
+            <%= f.label :name %><br>
+            <%= f.text_field :name,class:'col-xs-6',placeholder:'baslik..' %><br/><br/>
+            <%= f.label :aciklama %><br>
+            <%= f.text_field :description,class:'col-xs-6',placeholder:'baslik..' %><br/><br/>
+            <%= f.label :resim %><br>
+            <%= f.file_field :avatar %><br/><br/>
+            
+            <%= f.submit 'Save',class:'btn btn-success' %>
+            <%= link_to 'Geri', movies_path,class:'btn btn-info' %>
+        <%end%>
+    </div>
+</div>

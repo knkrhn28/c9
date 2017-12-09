@@ -1,0 +1,25 @@
+	<br/>
+	<table class="table table-bordered" >
+        <thead>
+            <tr>
+              <th><%= "baslik" %></th>
+              <th><%= "aciklama" %></th>
+              
+              <th><%= "tarih" %></th>
+              <th><%= "Düzenle" %></th>
+              <th><%= "Sil" %></th>
+            </tr>
+        </thead>
+			<tbody>
+				<% @movies.each do |movie| %>
+				  <tr>
+				  	<td><%= link_to movie.name,movie_path(movie) %></td>
+					<td><%= movie.description %></td>
+					<td><%= movie.published_date %></td>
+					<td><%= link_to 'düzenle',edit_movie_path(movie),class:'btn btn-info' %></td>
+					<td><%= link_to 'sil',movie_path(movie),method: :delete, data: { confirm: 'emin misin?' },class:'btn btn-danger' %></td>
+				  </tr>
+				<% end %>
+			</tbody>
+			
+    </table>
